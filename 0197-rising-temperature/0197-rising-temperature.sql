@@ -1,4 +1,4 @@
--- Approach 1:
+# Approach 1:using JOIN
 /*
 SELECT 
     today.id
@@ -8,7 +8,8 @@ ON DATEDIFF(today.recordDate, yesterday.recordDate) = 1
 WHERE today.temperature > yesterday.temperature
 */
 
-# Approach 2;
+# Approach 2: using LAG
+/*
 WITH previous_Weather_Data AS
 (
 SELECT
@@ -24,3 +25,24 @@ SELECT id
 FROM previous_Weather_Data
 WHERE temperature > prev_temperature
     AND recordDate = DATE_ADD(prev_recordDate, INTERVAL 1 DAY)
+*/
+
+#Approach 3: Using Subquery
+/*
+SELECT id
+FROM weather w1
+WHERE
+    w1.temperature > 
+    (
+        SELECT w2.temperature
+        FROM weather w2
+        WHERE w2.recordDate = DATE_SUB(w1.recordDate, INTERVAL 1 DAY)
+    )
+*/
+
+#Approach 4: Using CROSS JOIN
+SELECT today.id
+FROM Weather yesterday
+CROSS JOIN Weather today
+WHERE DATEDIFF(today.recordDate, yesterday.recordDate) = 1
+    AND today.temperature > yesterday.temperature;
