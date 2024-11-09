@@ -20,9 +20,13 @@ FROM cte
 SELECT
 	ROUND(SUM(immediate)*100/COUNT(customer_id) ,2) AS immediate_percentage
 FROM (SELECT *
-	, RANK() OVER(PARTITION BY customer_id ORDER BY order_date) AS rnk
+	, ROW_NUMBER() OVER(PARTITION BY customer_id ORDER BY order_date) AS rnk
     , IF(order_date = customer_pref_delivery_date, 1, 0) AS immediate
 FROM Delivery) AS new_table
 WHERE rnk = 1;
+
+/*
+If there were duplicate first orders then this code won't work so use ROW_NUMBER() else I used RANK() first
+*/
 
 
