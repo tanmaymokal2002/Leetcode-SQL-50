@@ -1,4 +1,5 @@
 #Approach 1:
+/*
 WITH cte AS
 (SELECT 
 	customer_id
@@ -13,7 +14,15 @@ SELECT
         COUNT(min_order_date)
     , 2) AS immediate_percentage
 FROM cte
+*/
 
-
+#Approach 2: Using Window Functions
+SELECT
+	ROUND(SUM(immediate)*100/COUNT(customer_id) ,2) AS immediate_percentage
+FROM (SELECT *
+	, RANK() OVER(PARTITION BY customer_id ORDER BY order_date) AS rnk
+    , IF(order_date = customer_pref_delivery_date, 1, 0) AS immediate
+FROM Delivery) AS new_table
+WHERE rnk = 1;
 
 
