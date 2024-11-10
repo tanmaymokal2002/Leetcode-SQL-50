@@ -12,6 +12,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0584-find-customer-referee](https://github.com/tanmaymokal2002/SQL/tree/master/0584-find-customer-referee) |
 | [0595-big-countries](https://github.com/tanmaymokal2002/SQL/tree/master/0595-big-countries) |
 | [0596-classes-more-than-5-students](https://github.com/tanmaymokal2002/SQL/tree/master/0596-classes-more-than-5-students) |
+| [0619-biggest-single-number](https://github.com/tanmaymokal2002/SQL/tree/master/0619-biggest-single-number) |
 | [0620-not-boring-movies](https://github.com/tanmaymokal2002/SQL/tree/master/0620-not-boring-movies) |
 | [1153-product-sales-analysis-i](https://github.com/tanmaymokal2002/SQL/tree/master/1153-product-sales-analysis-i) |
 | [1155-product-sales-analysis-iii](https://github.com/tanmaymokal2002/SQL/tree/master/1155-product-sales-analysis-iii) |
