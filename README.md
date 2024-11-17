@@ -25,6 +25,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [1258-article-views-i](https://github.com/tanmaymokal2002/SQL/tree/master/1258-article-views-i) |
 | [1278-product-price-at-a-given-date](https://github.com/tanmaymokal2002/SQL/tree/master/1278-product-price-at-a-given-date) |
 | [1292-immediate-food-delivery-ii](https://github.com/tanmaymokal2002/SQL/tree/master/1292-immediate-food-delivery-ii) |
+| [1317-monthly-transactions-i](https://github.com/tanmaymokal2002/SQL/tree/master/1317-monthly-transactions-i) |
 | [1327-last-person-to-fit-in-the-bus](https://github.com/tanmaymokal2002/SQL/tree/master/1327-last-person-to-fit-in-the-bus) |
 | [1338-queries-quality-and-percentage](https://github.com/tanmaymokal2002/SQL/tree/master/1338-queries-quality-and-percentage) |
 | [1390-average-selling-price](https://github.com/tanmaymokal2002/SQL/tree/master/1390-average-selling-price) |
