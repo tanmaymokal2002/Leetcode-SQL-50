@@ -1,5 +1,6 @@
 
--- Leetcode Solutions:
+#Approach 1: did on own
+/*
 WITH cte AS
 (SELECT
 	m.title,
@@ -47,3 +48,28 @@ FROM
 	WHERE avg_rating = (SELECT MAX(avg_rating) FROM cte3)
     ORDER BY results ASC
 	LIMIT 1) AS max_movie_avg
+*/
+
+#Approach 2:
+
+#Approach 2:
+WITH cte AS
+(SELECt mr.*
+	, u.name
+    , m.title
+FROM MovieRating mr 
+LEFT JOIN Users u ON mr.user_id = u.user_id
+LEFT JOIN Movies m ON m.movie_id = mr.movie_id)
+
+(SELECT name AS results
+FROM cte
+GROUP BY name
+ORDER BY COUNT(*) DESC, name
+LIMIT 1)
+UNION ALL
+(SELECT title
+FROM cte
+WHERE DATE_FORMAT(created_at, '%Y-%m') = '2020-02'
+GROUP BY title
+ORDER BY AVG(rating) DESC, title
+LIMIT 1)
