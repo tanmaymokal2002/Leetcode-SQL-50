@@ -4,4 +4,4 @@ SELECT
 		DISTINCT salary 
 	FROM EMPLOYEE
 	ORDER BY salary DESC
-	LIMIT 1, 1) AS SecondHighestSalary
+	LIMIT 1 OFFSET 1) AS SecondHighestSalary
